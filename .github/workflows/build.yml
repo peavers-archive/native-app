@@ -101,12 +101,12 @@ jobs:
           gu install native-image
 
       - name: 'Get JAR Artifact'
-        uses: actions/download-artifact@v2-preview
+        uses: actions/download-artifact@v3.0.2
         with:
           name: 'native-app.jar'
 
       - name: 'Get Release URL'
-        uses: actions/download-artifact@v2-preview
+        uses: actions/download-artifact@v3.0.2
         with:
           name: 'upload_url.txt'
 
@@ -159,7 +159,7 @@ jobs:
         run: |
           choco install visualstudio2017-workload-vctools
       - name: 'Get JAR Artifact'
-        uses: actions/download-artifact@v2-preview
+        uses: actions/download-artifact@v3.0.2
         with:
           name: 'native-app.jar'
 
@@ -172,7 +172,7 @@ jobs:
           ./graalvm-ce-java11-21.2.0/bin/native-image --no-server --no-fallback --allow-incomplete-classpath -jar native-app.jar
       - name: 'Get Release URL'
       
-        uses: actions/download-artifact@v2-preview
+        uses: actions/download-artifact@v3.0.2
         with:
           name: 'upload_url.txt'
 
